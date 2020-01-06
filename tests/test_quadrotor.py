@@ -4,7 +4,7 @@ import numpy as np
 import math
 
 
-class QuadrotorTests(unittest.TestCase):
+class TestQuadrotor(unittest.TestCase):
 
     def test_world_gravity(self):
         """

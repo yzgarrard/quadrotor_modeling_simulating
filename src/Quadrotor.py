@@ -28,12 +28,12 @@ class Quadrotor:
 
     def __init__(self,
                  mass: float = None,
-                 arm_lengths: "list of floats" = None,
-                 inertia: "list of list of floats" = None,
-                 attitude: "list of floats" = None,
-                 attitude_rate: "list of floats" = None,
-                 thrust: "list of floats" = None,
-                 state_space: "list of floats" = None,
+                 arm_lengths: [float] = None,
+                 inertia: [[float]] = None,
+                 attitude: [float] = None,
+                 attitude_rate: [float] = None,
+                 thrust: [float] = None,
+                 state_space: [float] = None,
                  timestep: float = None):
         """
         :param mass: mass of quadrotor in kg

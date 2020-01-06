@@ -21,7 +21,7 @@ class QuadrotorTests(unittest.TestCase):
         Check that a given set of actuator thrusts counters gravity
         :return:
         """
-        testquadrotor = Quadrotor(motor_thrusts=[-12.57642 / 4, -12.57642 / 4, -12.57642 / 4, -12.57642 / 4])
+        testquadrotor = Quadrotor(thrust=[0, 0, -12.57642])
         self.assertTrue(np.all(np.isclose(testquadrotor.calculate_world_force(), np.array([0, 0, 0]))))
 
     def test_nonplanar_force(self):
@@ -29,7 +29,7 @@ class QuadrotorTests(unittest.TestCase):
         Check that when quadrotor is not aligned with an axis or plane, it generates force in the correct direction
         :return:
         """
-        testquadrotor = Quadrotor(motor_thrusts=[-5, -5, -5, -5],
+        testquadrotor = Quadrotor(thrust=[0, 0, -20],
                                   attitude=[0.3, 0.3, 0.3])
 
         self.assertTrue(np.all(np.isclose(testquadrotor.calculate_world_force(),
